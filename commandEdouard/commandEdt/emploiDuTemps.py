@@ -82,7 +82,7 @@ def trierCours(cours):
 
 def editCour(cour):
     matiere = cour['matiere']
-    p = re.compile(" ")
+    p = re.compile("(?:M\d{4,5}(?:.\d)?-?\d?(?:\/M\d{4}-?| ?)?)(?:(?:(.+)(?: G\d|S\d))|(.* DS)|(.+))")
     m = p.match(matiere).groups()
     if m[0] != None:
         matiere = m[0]
