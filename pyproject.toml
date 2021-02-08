@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "botdiscord"
+version = "0.1.0"
+description = ""
+authors = ["Martin <martin.bonnefoy@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+discord = "^1.0.1"
+flask = "^1.1.2"
+icalendar = "^4.0.7"
+eventlet = "^0.30.0"
+flask-socketio = "^5.0.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Logs de Ed0uard</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="/static/icone.png">
+        <style>
+            body {
+                padding: 20px;
+                font-family: inconsolata, monospace;
+            }
+            h1 {
+                text-align: center;
+            }
+            button {
+                font-family: inconsolata, monospace;
+                margin: 20px;
+                padding: 5px 6px;
+            }
+            section {
+                border: 1px solid black;
+                padding: 10px;
+                background: #252525;
+                color: white;
+            }
+            div {
+                font-size: 18px;
+            }
+            span.connexion {
+                color: #8e8eff;
+            }
+            span.erreur {
+                color: red;
+            }
+            span.commande {
+                color: #609a60;
+            }
+            span.autre {
+                color: #ffffbe;
+            }
+        </style>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.0/socket.io.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1>Logs de Ed0uard</h1>
+        <button onClick="clearLog()">Effacer tous les logs</button>
+        <section id="content">
+            {% for line in content %}
+                <div>{{line["message"][:23]}}{% if line["type"] != "" %}<span class="{{line["type"]}}">{{line["message"][23:]}}</span>{% endif %}</div>
+            {% endfor %}
+        </section>
+        <script type="text/javascript" charset="utf-8">
+            var socket = io.connect("http://projet-edouard.mart_84.repl.co:" + location.port);
+            const audio = new Audio("static/ding.mp3");
+            var section = document.getElementById('content');
+
+            socket.emit('connexion', {data: "connected"});
+            socket.on('reponseConnexion', function(arg) {
+                console.log("connecté au serveur");
+            });
+
+            socket.on('nouveauteBis', function(contenu) {
+                ajout = "<div>" + contenu["time"] + "<span class=\"" + contenu["type"] + "\">" + contenu["msg"] + "</span></div>"
+                section.innerHTML = ajout + section.innerHTML;
+                audio.play();
+            });
+
+            function clearLog() {
+                socket.emit('clearLog', {});
+                section.innerHTML = "<div>Aucun log enregistré</div>";
+            }
+        </script>
+    </body>
+</html>
