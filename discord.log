@@ -13,3 +13,9 @@
 [08/02/2021 18:46:32]: Commande activée par mart_84 : edouard edt 22/2/2021 26/2/2021 -> Affichage de l'emploi du temps : 22/02/2021 à 26/02/2021
 [08/02/2021 21:41:43]: Bot connecté en tant que Ed0uard#3326 avec les préfixes de commande : "('Edouard ', 'edouard ')"
 [08/02/2021 21:48:54]: Bot connecté en tant que Ed0uard#3326 avec les préfixes de commande : "('Edouard ', 'edouard ')"
+[08/02/2021 21:51:33]: Erreur levée par une commande mal utilisée : "Command raised an exception: AttributeError: 'NoneType' object has no attribute 'groups'" de type <class 'discord.ext.commands.errors.CommandInvokeError'> causée par la commande "edouard edt 22/2/2021 26/2/2021" de mart_84#4364
+[08/02/2021 21:54:56]: Bot connecté en tant que Ed0uard#3326 avec les préfixes de commande : "('Edouard ', 'edouard ')"
+[08/02/2021 21:54:59]: Commande activée par mart_84 : edouard edt -> Affichage de l'emploi du temps : 08/02/2021
+[08/02/2021 21:55:05]: Erreur levée par une commande mal utilisée : "Command raised an exception: AttributeError: 'NoneType' object has no attribute 'groups'" de type <class 'discord.ext.commands.errors.CommandInvokeError'> causée par la commande "edouard edt 22/2/2021 26/2/2021" de mart_84#4364
+[08/02/2021 21:55:32]: Bot connecté en tant que Ed0uard#3326 avec les préfixes de commande : "('Edouard ', 'edouard ')"
+[08/02/2021 21:55:35]: Commande activée par mart_84 : edouard edt 22/2/2021 26/2/2021 -> Affichage de l'emploi du temps : 22/02/2021 à 26/02/2021
