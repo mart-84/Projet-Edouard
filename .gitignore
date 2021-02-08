@@ -1,0 +1,4 @@
+*.log
+**/dataTodo
+poetry.lock
+pyproject.toml
